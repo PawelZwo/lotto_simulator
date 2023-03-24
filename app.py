@@ -35,15 +35,21 @@ def lotto():
     print(
         "Hello, there! Let's try your luck in LOTTO. Pick six numbers and let's find out, if you won the grand prize!\n"
     )
+
     list_from_user = create_users_numbers_list()
     print("\nYou chose: " + ", ".join(str(number) for number in list_from_user) + ".")
+
     list_from_pc = pc_secret_numbers()
     print("I chose: " + ", ".join(str(number) for number in list_from_pc) + ".")
+
     hits = 0
     for number in list_from_user:
         if number in list_from_pc:
             hits += 1
-    print(f"\nYou got {hits} of them right! {'YOU WON THE PRIZE' if hits == 6 else 'Better luck next time!'}")
+
+    print(
+        f"\nYou got {hits} {'of them right!' if hits > 0 else 'hits'} {'YOU WON THE PRIZE!' if hits == 6 else 'Better luck next time!'}"
+    )
 
 
 lotto()
