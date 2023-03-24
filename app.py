@@ -43,7 +43,7 @@ def lotto():
     for number in list_from_user:
         if number in list_from_pc:
             hits += 1
-    print(f"\nYou got {hits} {'number' if hits == 1 else 'numbers'} of them right!")
+    print(f"\nYou got {hits} of them right! {'YOU WON THE PRIZE' if hits == 6 else 'Better luck next time!'}")
 
 
 lotto()
